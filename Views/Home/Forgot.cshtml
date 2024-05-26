@@ -1,0 +1,755 @@
+@model Lab01.Models.InputData.InputModelForgot;
+
+@{
+    ViewData["Title"] = "Forgot";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title> Login </title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/wwwroot/css/style.css")">
+    <!-- Demo CSS (No need to include it into your project) -->
+    <link rel="stylesheet" href="@Url.Content("~/wwwroot/css/demo.css")">
+    <link rel="stylesheet" href="/Views/Shared/demo.css">
+    <link rel="stylesheet" href="/Views/Shared/style.css">
+</head>
+
+<body>
+    <header class="cd__intro">
+        <h1> Login/Register Form (Pure CSS, Vanilla JS) Example </h1>
+        <p> Login/Register Form (Pure CSS, Vanilla JS) </p>
+        <!-- <div class="cd__action">
+            <a href="https://www.codehim.com/forms/login-register-forgot-password-form-template" title="Back to download and tutorial page" class="cd__btn back">Back to Tutorial</a>
+         </div> -->
+    </header>
+
+    <!--$%adsense%$-->
+    <main class="cd__main">
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+        <form asp-controller="Home" asp-action="Forgot" class="asm-form active" method="post">
+            <div class="asm-form__header">
+                <h2>Forget Password</h2>
+            </div>
+            <div class="asm-form__body">
+                <div class="asm-form__linkbox">
+                    <a type="button" class="asm-form__link" asp-action="Login" asp-for="Home">Sign
+                        in</a>
+                </div>
+                <div class="asm-form__inputbox">
+                    <svg class="asm-form__icon prepend" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z" />
+                    </svg>
+                    <input class="asm-form__input validate" type="email" id="forgetEmail" placeholder="email"
+                        asp-for="Email">
+                    <label class="asm-form__inputlabel active" for="forgetEmail">email</label>
+                    <span style="color: red;" asp-validation-for="Email"></span>
+                </div>
+                <div class="asm-form__linkbox">
+                    Not a member? <a type="button" class="asm-form__link" asp-action="Register"
+                        asp-for="Home">Register</a>
+                </div>
+            </div>
+
+            <div class="asm-form__footer">
+                <button class="asm-form__btn" id="forgetSubmit">Send</button>
+            </div>
+        </form>
+        <!-- END EDMO HTML (Happy Coding!)-->
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Include SweetAlert2 CSS and JS -->
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/alertify.min.css" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        @if (TempData["Mess"] != null)
+        {
+            <text>
+                        alertify.success('@TempData["Mess"]');
+            </text>
+        }
+    });
+    </script>
+
+
+
+    <footer class="cd__credit">Author: Agil Kerimov - Distributed By: <a title="Free web design code & scripts"
+            href="https://www.codehim.com?source=demo-page" target="_blank">CodeHim</a></footer>
+
+    <style>
+        :root {
+            --asm-default-transition: 300ms;
+            --asm-color-facebook: rgb(59, 89, 152);
+            --asm-color-twitter: rgb(85, 172, 238);
+            --asm-color-google: rgb(219, 68, 55);
+            --asm-color-linkedin: rgb(0, 130, 202);
+        }
+
+        :root {
+            --asm-color-warning: #ffc107;
+            --asm-color-danger: #dc3545;
+            --asm-color-dark: #343a40;
+            --asm-color-focus: rgba(0, 123, 255, 0.25);
+            --asm-color-secondary: #3f5c80;
+            --asm-color-accent: #b4c2c9;
+            --asm-color-flat: #6a9ed3;
+            --asm-color-sidenav-item: rgba(29, 54, 86, .6);
+            --asm-color-input-border: rgba(52, 58, 64, .25);
+            --asm-color-btn-secondary: #64c3f0;
+            --asm-color-background: #fff;
+            --asm-color-text: #343a40;
+            --asm-color-secondary-text: #fff;
+            --asm-color-social: #fff;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: var(--asm-default-transition);
+            transition: var(--asm-default-transition);
+        }
+
+        .cd__main {
+            flex-direction: column !important;
+            align-items: center;
+            background: linear-gradient(to right, #d3cce3, #e9e4f0) !important;
+        }
+
+        body {
+            padding-top: 1rem;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .asm-form {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: 90%;
+            max-width: 30rem;
+            margin: 0 auto;
+            font-family: inherit;
+            border-radius: 0.5rem;
+            -webkit-box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.15);
+            color: var(--asm-color-text);
+            background-color: var(--asm-color-background);
+            font-size: .8rem;
+        }
+
+        .asm-form:not(.active) {
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .asm-form__body {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 0.75rem 2rem;
+            font-family: inherit;
+            color: var(--asm-color-text);
+            background-color: var(--asm-color-background);
+        }
+
+        .asm-form__footer,
+        .asm-form__header {
+            padding: 0.75rem 2rem;
+            color: var(--asm-color-secondary-text);
+            background-color: var(--asm-color-secondary);
+        }
+
+        .asm-form__footer {
+            border-radius: 0 0 .5rem .5rem;
+        }
+
+        .asm-form__header {
+            border-radius: .5rem .5rem 0 0;
+        }
+
+        .asm-form__social-networks {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .asm-form__social-btn {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            margin: .5rem 0;
+            background-color: var(--btn-bg-color);
+            border: none;
+            border-radius: 50%;
+            -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
+
+        .asm-form__social-btn:hover {
+            -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .asm-form__social-btn:not(:first-child) {
+            margin-left: 1rem;
+        }
+
+        .asm-form__social-btn.facebook {
+            --btn-bg-color: var(--asm-color-facebook);
+        }
+
+        .asm-form__social-btn.twitter {
+            --btn-bg-color: var(--asm-color-twitter);
+        }
+
+        .asm-form__social-btn.google {
+            --btn-bg-color: var(--asm-color-google);
+        }
+
+        .asm-form__social-btn.linkedin {
+            --btn-bg-color: var(--asm-color-linkedin);
+        }
+
+        .asm-form__social-icon {
+            height: 1.25rem;
+        }
+
+        .asm-form__social-icon .inner {
+            fill: var(--asm-color-social);
+        }
+
+        .asm-form__inputbox,
+        .asm-form__leverbox {
+            position: relative;
+            margin: 0.5rem 0;
+            --error-opacity: 0;
+            --error-top: -3rem;
+            --error-z-index: -1;
+            --input-box-shadow: none;
+        }
+
+        .asm-form__inputbox.invalid,
+        .asm-form__leverbox.invalid {
+            --error-opacity: 1;
+            --error-top: 100%;
+            --error-z-index: 10;
+            --input-box-shadow: inset 0 0 4px var(--asm-color-warning);
+        }
+
+        .asm-form__icon {
+            position: absolute;
+            top: 50%;
+            max-width: 1rem;
+            color: inherit;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .asm-form__icon.prepend {
+            left: 1rem;
+        }
+
+        .asm-form__icon.append {
+            right: 1rem;
+        }
+
+        .asm-form__inputlabel {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            font-family: inherit;
+            color: inherit;
+            -webkit-transition: var(--asm-default-transition);
+            transition: var(--asm-default-transition);
+            -webkit-transform: translate(3rem, -50%);
+            transform: translate(3rem, -50%);
+        }
+
+        .asm-form__inputlabel:not(.active) {
+            font-size: 1.25em;
+        }
+
+        .asm-form__inputlabel.active {
+            top: 0;
+            font-size: 1em;
+            -webkit-transform: translate(1rem, -100%);
+            transform: translate(1rem, -100%);
+            color: var(--asm-color-text);
+            text-transform: capitalize;
+        }
+
+        .asm-form__error {
+            position: absolute;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            padding: .5rem 1rem;
+            z-index: var(--error-z-index);
+            top: var(--error-top);
+            left: 3rem;
+            color: var(--asm-color-warning);
+            background: var(--asm-color-danger);
+            border-radius: 0.5rem;
+            opacity: var(--error-opacity);
+        }
+
+        .asm-form__error::before {
+            position: absolute;
+            left: 1rem;
+            top: -1rem;
+            z-index: -1;
+            content: '';
+            width: .5rem;
+            height: .5rem;
+            display: block;
+            border-width: .5rem;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: var(--asm-color-danger);
+            border-left-color: transparent;
+            border-style: solid;
+        }
+
+        .asm-form__input {
+            width: 100%;
+            padding: 0.75rem 3rem;
+            font-family: inherit;
+            font-size: 1.25em;
+            color: inherit;
+            background-color: inherit;
+            border: 1px solid var(--asm-color-input-border);
+            border-radius: .3rem;
+            -webkit-box-shadow: var(--input-box-shadow);
+            box-shadow: var(--input-box-shadow);
+            box-sizing: border-box;
+        }
+
+        .asm-form__input::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        .asm-form__input:-ms-input-placeholder {
+            color: transparent;
+        }
+
+        .asm-form__input::-ms-input-placeholder {
+            color: transparent;
+        }
+
+        .asm-form__input::placeholder {
+            color: transparent;
+        }
+
+        .asm-form__input:active,
+        .asm-form__input:focus,
+        .asm-form__input:hover {
+            outline: none;
+            -webkit-box-shadow: inset 0 0 4px var(--asm-color-sidenav-item);
+            box-shadow: inset 0 0 4px var(--asm-color-sidenav-item);
+        }
+
+        .asm-form__leverbox {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+
+
+        .asm-form__leverlabel {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .asm-form__lever {
+            position: relative;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-appearance: none;
+            width: 2rem;
+            height: 1rem;
+            margin-right: 1rem;
+            background-color: var(--background);
+            border: 1px solid var(--asm-color-secondary);
+            border-radius: 1rem;
+            outline: none;
+            -webkit-transition: var(--asm-default-transition);
+            transition: var(--asm-default-transition);
+            cursor: pointer;
+            --background: transparent;
+            --ball-background: var(--asm-color-secondary);
+            --ball-left: 0.15rem;
+        }
+
+        .asm-form__lever:checked {
+            --background: var(--asm-color-secondary);
+            --ball-background: #fff;
+            --ball-left: calc(100% - .85rem);
+        }
+
+        .asm-form__lever:focus {
+            -webkit-box-shadow: 0 0 0 0.2rem var(--asm-color-focus);
+            box-shadow: 0 0 0 0.2rem var(--asm-color-focus);
+        }
+
+        .asm-form__lever::before {
+            position: absolute;
+            top: 50%;
+            left: var(--ball-left);
+            display: block;
+            width: 0.75rem;
+            height: 0.75rem;
+            content: '';
+            -webkit-transition: var(--asm-default-transition);
+            transition: var(--asm-default-transition);
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            background: var(--ball-background);
+            border-radius: 50%;
+        }
+
+        .asm-form__linkbox {
+            text-align: right;
+        }
+
+        .asm-form__link {
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: var(--asm-color-flat);
+            font-size: 1em;
+        }
+
+        .asm-form__link:hover {
+            color: var(--asm-color-accent);
+        }
+
+        .asm-form__btn {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.3rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1.2em;
+            color: var(--asm-color-dark);
+            background: var(--asm-color-btn-secondary);
+            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .asm-form__btn:hover {
+            -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-content: flex-start;
+
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-smoothing: antialiased;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 15px;
+            background: #eee;
+        }
+
+        .cd__intro {
+            padding: 60px 30px;
+            margin-bottom: 15px;
+            flex-direction: column;
+
+        }
+
+        .cd__intro,
+        .cd__credit {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            color: #333;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .cd__intro h1 {
+            font-size: 18pt;
+            padding-bottom: 15px;
+
+        }
+
+        .cd__intro p {
+            font-size: 14px;
+        }
+
+        .cd__action {
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .cd__action a.cd__btn {
+            text-decoration: none;
+            color: #666;
+            border: 2px solid #666;
+            padding: 10px 15px;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .cd__action a.cd__btn:hover {
+            background: #666;
+            color: #fff;
+            transition: .3s;
+            -webkit-transition: .3s;
+        }
+
+        .cd__action .cd__btn:before {
+            font-family: FontAwesome;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        .down:before {
+            content: "\f019"
+        }
+
+        .back:before {
+            content: "\f112"
+        }
+
+        .cd__credit {
+            padding: 12px;
+            font-size: 9pt;
+            margin-top: 40px;
+
+        }
+
+        .cd__credit span:before {
+            font-family: FontAwesome;
+            color: #e41b17;
+            content: "\f004";
+
+
+        }
+
+        .cd__credit a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .cd__credit a:hover {
+            color: #1DBF73;
+        }
+
+        .cd__credit a:hover:after {
+            font-family: FontAwesome;
+            content: "\f08e";
+            font-size: 9pt;
+            position: absolute;
+            margin: 3px;
+        }
+
+        .cd__main {
+            background: #fff;
+            padding: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .cd__main {
+            display: flex;
+            width: 100%;
+        }
+
+
+        }
+    </style>
+    <!-- Script JS -->
+    <script>
+        const frmSignIn = document.getElementById('frmSignIn');
+        const frmForget = document.getElementById('frmForget');
+        const frmRegister = document.getElementById('frmRegister');
+
+        const inputs = document.querySelectorAll('.asm-form__input');
+        const showPasswordTogglers = document.querySelectorAll('[data-action="toggle-show-password"]');
+        const linkButtons = document.querySelectorAll('[data-action="show-form"]');
+
+        /* Functions */
+        const inputLabelFocusOut = event => {
+            label = document.querySelector(`label[for="${event.target.id}"]`);
+            if (event.target.value.length > 0) {
+                label.classList.add('active');
+                label.parentNode.classList.remove('invalid');
+            } else {
+                label.classList.remove('active');
+            }
+        }
+
+        const inputLabelFocus = event => {
+            label = document.querySelector(`label[for="${event.target.id}"]`);
+            label.classList.add('active');
+            label.parentNode.classList.remove('invalid');
+        }
+
+        const toggleShowPassword = event => {
+            const input = document.querySelector(event.target.dataset.input);
+            const type = input.getAttribute('type');
+            input.setAttribute('type', type === 'password' ? 'text' : 'password');
+        }
+
+        const showForm = event => {
+            event.preventDefault();
+
+            for (const form of document.querySelectorAll('.asm-form')) {
+                form.classList.remove('active');
+            }
+
+            for (const error of document.querySelectorAll('.asm-form__inputbox.invalid')) {
+                error.classList.remove('invalid');
+            }
+
+            document.querySelector(event.target.dataset.target).classList.add('active');
+        }
+
+        /* Listener assigns */
+
+        for (const input of inputs) {
+            input.addEventListener('focusout', inputLabelFocusOut);
+            input.addEventListener('focus', inputLabelFocus);
+        }
+
+        for (const toggler of showPasswordTogglers) {
+            toggler.addEventListener('click', toggleShowPassword);
+        }
+
+        for (const button of linkButtons) {
+            button.addEventListener('click', showForm);
+        }
+
+        /* Form Validator*/
+
+        const validateForm = form => {
+            const inputs = form.querySelectorAll('.validate');
+            for (const input of inputs) {
+
+                input.classList.remove('invalid');
+                input.parentNode.classList.remove('invalid');
+
+                let allOK = true;
+
+                switch (input.dataset.validation) {
+                    case 'regex': {
+                        allOK = input.value.match(new RegExp(input.dataset.regex));
+                        break;
+                    }
+                    case 'match': {
+                        allOK = input.value === form.querySelector(input.dataset.target).value;
+                        break;
+                    }
+                    default: {
+                        allOK = false;
+                        break;
+                    }
+                } //end of switch
+
+                if (!allOK) {
+                    input.classList.add('invalid');
+                    input.parentNode.classList.add('invalid');
+                    return false;
+                }
+            } //end of for-of
+
+        }
+    </script>
+    <!--$%analytics%$-->
+</body>
+
+</html>

@@ -1,0 +1,438 @@
+@{
+    ViewData["Title"] = "VerifyCode";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title> OTP Verify Mockup Example </title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Demo CSS (No need to include it into your project) -->
+    <link rel="stylesheet" href="./css/demo.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>
+</head>
+
+<body>
+    <header class="cd__intro">
+        <h1> Wellcom back </h1>
+        <p>press button to Login</p>
+        <div class="cd__action">
+            <a asp-action="login" asp-controller="Home" title="Back to login" class="cd__btn back">Back to Login</a>
+        </div>
+    </header>
+    <!--$%adsense%$-->
+    <main class="cd__main">
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+
+        <body class="container-fluid bg-body-tertiary d-block">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4" style="min-width: 500px;">
+                    <div class="card bg-white mb-5 mt-5 border-0" style="box-shadow: 0 12px 15px rgba(0, 0, 0, 0.02);">
+                        <div class="card-body p-5 text-center">
+                            <h4 style="font-weight: bold;">Verify your Account</h4>
+                            <p>Your code was sent to you via email</p>
+
+                            <div class="otp-field mb-4">
+                                <input id="number1" type="number" />
+                                <input id="number2" type="number" disabled />
+                                <input id="number3" type="number" disabled />
+                                <input id="number4" type="number" disabled />
+                                <input id="number5" type="number" disabled />
+                            </div>
+                            <button type="submit" onclick="SubmitCode()" class="btn btn-primary mb-3">
+                                Verify
+                            </button>
+
+                            <p class="resend text-muted mb-0">
+                                Didn't receive code?
+                                <a href="#" id="resendLink" onclick="ResendCode(event)">Request again</a>
+                                <span id="countdown" style="display: none;color: red;"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                Made with ❤️ thanhmax14 | Visit <a href="https://shopblocks.com" target="_blank">Shopblocks</a>
+            </div>
+        </body>
+        <!-- END EDMO HTML (Happy Coding!)-->
+    </main>
+    <footer class="cd__credit">Author: Marcus - Distributed By: <a title="Free web design code & scripts"
+            href="https://www.codehim.com?source=demo-page" target="_blank">CodeHim</a></footer>
+
+    <!-- Script JS -->
+    <script src="./js/script.js"></script>
+    <!--$%analytics%$-->
+</body>
+
+</html>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+<!-- Include SweetAlert2 CSS and JS -->
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+<!-- Include AlertifyJS CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/alertify.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script>
+    function SubmitCode() {
+        var number1 = $("#number1").val();
+        var number2 = $("#number2").val();
+        var number3 = $("#number3").val();
+        var number4 = $("#number4").val();
+        var number5 = $("#number5").val();
+        var allnumber = number1 + number2 + number3 + number4 + number5;
+
+        $.ajax({
+            type: "POST",
+            url: '/Home/checkCode/',
+            data: { allnumber: allnumber },
+            success: function (response) {
+                if (response.success) {
+                    alertify.success("Code Corect");
+                    let timerInterval;
+                    Swal.fire({
+                        title: "Congratulations",
+                        html: "Please wait <b></b> milliseconds to go to the main page.",
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading();
+                            const timer = Swal.getPopup().querySelector("b");
+                            timerInterval = setInterval(() => {
+                                timer.textContent = Swal.getTimerLeft();
+                            }, 100);
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval);
+                        }
+                    }).then((result) => {
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            window.location.href = "/Home/Index"; // Redirect to the main page
+                        }
+                    });
+                } else {
+                    alertify.error("Code is incorrect. Please Input again!!");
+                }
+            },
+            error: function () {
+                alert("Failed");
+            }
+        });
+    }
+    function ResendCode(event) {
+        event.preventDefault();
+        var resendLink = document.getElementById("resendLink");
+        var countdown = document.getElementById("countdown");
+        resendLink.style.display = "none";
+        countdown.style.display = "inline";
+        var timeLeft = 60;
+        countdown.textContent = ` (${timeLeft}s)`;
+
+        var timerInterval = setInterval(function () {
+            timeLeft--;
+            countdown.textContent = ` (${timeLeft}s)`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                resendLink.style.display = "inline";
+                countdown.style.display = "none";
+            }
+        }, 1000);
+        $.ajax({
+            url: '/Home/VerifyCode',
+            method: 'POST',
+            success: function (response) {
+                alertify.success("Code resent! Please wait 60 seconds before requesting again.");
+            },
+            error: function () {
+                alertify.error("Failed to resend code. Please try again.");
+            }
+        });
+    }
+</script>
+</script>
+
+
+
+
+<script>
+    const inputs = document.querySelectorAll(".otp-field > input");
+    const button = document.querySelector(".btn");
+
+    window.addEventListener("load", () => inputs[0].focus());
+    button.setAttribute("disabled", "disabled");
+
+    inputs[0].addEventListener("paste", function (event) {
+        event.preventDefault();
+
+        const pastedValue = (event.clipboardData || window.clipboardData).getData(
+            "text"
+        );
+        const otpLength = inputs.length;
+
+        for (let i = 0; i < otpLength; i++) {
+            if (i < pastedValue.length) {
+                inputs[i].value = pastedValue[i];
+                inputs[i].removeAttribute("disabled");
+                inputs[i].focus;
+            } else {
+                inputs[i].value = ""; // Clear any remaining inputs
+                inputs[i].focus;
+            }
+        }
+    });
+
+    inputs.forEach((input, index1) => {
+        input.addEventListener("keyup", (e) => {
+            const currentInput = input;
+            const nextInput = input.nextElementSibling;
+            const prevInput = input.previousElementSibling;
+
+            if (currentInput.value.length > 1) {
+                currentInput.value = "";
+                return;
+            }
+
+            if (
+                nextInput &&
+                nextInput.hasAttribute("disabled") &&
+                currentInput.value !== ""
+            ) {
+                nextInput.removeAttribute("disabled");
+                nextInput.focus();
+            }
+
+            if (e.key === "Backspace") {
+                inputs.forEach((input, index2) => {
+                    if (index1 <= index2 && prevInput) {
+                        input.setAttribute("disabled", true);
+                        input.value = "";
+                        prevInput.focus();
+                    }
+                });
+            }
+
+            button.classList.remove("active");
+            button.setAttribute("disabled", "disabled");
+
+            const inputsNo = inputs.length;
+            if (!inputs[inputsNo - 1].disabled && inputs[inputsNo - 1].value !== "") {
+                button.classList.add("active");
+                button.removeAttribute("disabled");
+
+                return;
+            }
+        });
+    });
+</script>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-smoothing: antialiased;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 15px;
+        background: #eee;
+    }
+
+    .cd__intro {
+        padding: 60px 30px;
+        margin-bottom: 15px;
+        flex-direction: column;
+
+    }
+
+    .cd__intro,
+    .cd__credit {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        color: #333;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .cd__intro h1 {
+        font-size: 18pt;
+        padding-bottom: 15px;
+
+    }
+
+    .cd__intro p {
+        font-size: 14px;
+    }
+
+    .cd__action {
+        text-align: center;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .cd__action a.cd__btn {
+        text-decoration: none;
+        color: #666;
+        border: 2px solid #666;
+        padding: 10px 15px;
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .cd__action a.cd__btn:hover {
+        background: #666;
+        color: #fff;
+        transition: .3s;
+        -webkit-transition: .3s;
+    }
+
+    .cd__action .cd__btn:before {
+        font-family: FontAwesome;
+        font-weight: normal;
+        margin-right: 10px;
+    }
+
+    .down:before {
+        content: "\f019"
+    }
+
+    .back:before {
+        content: "\f112"
+    }
+
+    .cd__credit {
+        padding: 12px;
+        font-size: 9pt;
+        margin-top: 40px;
+
+    }
+
+    .cd__credit span:before {
+        font-family: FontAwesome;
+        color: #e41b17;
+        content: "\f004";
+
+
+    }
+
+    .cd__credit a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .cd__credit a:hover {
+        color: #1DBF73;
+    }
+
+    .cd__credit a:hover:after {
+        font-family: FontAwesome;
+        content: "\f08e";
+        font-size: 9pt;
+        position: absolute;
+        margin: 3px;
+    }
+
+    .cd__main {
+        background: #fff;
+        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .cd__main {
+        display: flex;
+        width: 100%;
+    }
+
+    .otp-field {
+        flex-direction: row;
+        column-gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .otp-field input {
+        height: 45px;
+        width: 42px;
+        border-radius: 6px;
+        outline: none;
+        font-size: 1.125rem;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .otp-field input:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .otp-field input::-webkit-inner-spin-button,
+    .otp-field input::-webkit-outer-spin-button {
+        display: none;
+    }
+
+    .resend {
+        font-size: 12px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: black;
+        font-size: 12px;
+        text-align: right;
+        font-family: monospace;
+    }
+
+    .footer a {
+        color: black;
+        text-decoration: none;
+    }
+</style>
