@@ -38,6 +38,10 @@ namespace Lab01.Controllers
                         Gender = user.Gender,
                         Address = user.Address
                     };
+                    ViewBag.Fullname = user.LastName + " " + user.FirstName;
+                    ViewBag.Role = "User";
+                    ViewBag.jonin = user.joinin;
+
                     return View(model);
                 }
                 return NotFound("User not found");
@@ -87,6 +91,13 @@ namespace Lab01.Controllers
 
         public IActionResult Security()
         {
+            var username = HttpContext.Session.GetString("UserName");
+
+            var user = _db.users.FirstOrDefault(u => u.UserName == username);
+            ViewBag.Fullname = user.LastName + " " + user.FirstName;
+
+            ViewBag.Role = "User";
+            ViewBag.jonin = user.joinin;
 
             return View();
         }

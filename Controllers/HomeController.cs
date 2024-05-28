@@ -109,7 +109,6 @@ public class HomeController : Controller
         var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         if (!authenticateResult.Succeeded)
             return BadRequest();
-
         else
         {
             var userInfo = new
@@ -161,7 +160,7 @@ public class HomeController : Controller
                     }
                     else if (checkogin.RoleID == 2)
                     {
-                        return RedirectToAction("Index", "HRM");
+                        return RedirectToAction("Manager", "HRM");
                     }
                     else if (checkogin.RoleID == 3)
                     {
@@ -247,7 +246,7 @@ public class HomeController : Controller
                     }
                     else if (checkogin.RoleID == 2)
                     {
-                        return RedirectToAction("Index", "HRM");
+                        return RedirectToAction("Manager", "HRM");
                     }
                     else if (checkogin.RoleID == 3)
                     {

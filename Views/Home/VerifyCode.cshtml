@@ -159,7 +159,8 @@
                 countdown.style.display = "none";
             }
         }, 1000);
-        $.ajax({
+       
+         $.ajax({
             url: '/Home/VerifyCode',
             method: 'POST',
             success: function (response) {

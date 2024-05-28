@@ -55,7 +55,6 @@ namespace Lab01.Middleware
                     {
                         if (!context.Request.Path.Equals("/Home/AccessDenied"))
                         {
-
                             context.Response.Redirect("/Home/AccessDenied");
                             context.Session.Clear();
                             return;
