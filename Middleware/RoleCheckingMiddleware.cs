@@ -24,29 +24,33 @@ namespace Lab01.Middleware
                 System.Console.WriteLine(getinfo.RoleID);
                 bool redirect = false;
                 string redirectUrl = "/Home/AccessDenied";
+                if (getinfo.verifyAccount)
+                {
 
-                if (path.StartsWith("/User") && getinfo.RoleID != 1)
-                {
-                    redirect = true;
-                }
-                else if (path.StartsWith("/Admin") && getinfo.RoleID != 3)
-                {
-                    redirect = true;
-                }
-                else if (path.StartsWith("/HRM") && getinfo.RoleID != 2)
-                {
-                    redirect = true;
-                }
 
-                if (getinfo.RoleID == 1 && !path.StartsWith("/User"))
-                {
-                    redirect = true;
-                    redirectUrl = "/User/Profile";
-                }
-                else if (getinfo.RoleID == 2 && !path.StartsWith("/HRM"))
-                {
-                    redirect = true;
-                    redirectUrl = "/HRM/Manager";
+                    if (path.StartsWith("/User") && getinfo.RoleID != 1)
+                    {
+                        redirect = true;
+                    }
+                    else if (path.StartsWith("/Admin") && getinfo.RoleID != 3)
+                    {
+                        redirect = true;
+                    }
+                    else if (path.StartsWith("/HRM") && getinfo.RoleID != 2)
+                    {
+                        redirect = true;
+                    }
+
+                    if (getinfo.RoleID == 1 && !path.StartsWith("/User"))
+                    {
+                        redirect = true;
+                        redirectUrl = "/User/Profile";
+                    }
+                    else if (getinfo.RoleID == 2 && !path.StartsWith("/HRM"))
+                    {
+                        redirect = true;
+                        redirectUrl = "/HRM/Manager";
+                    }
                 }
 
                 if (redirect)
