@@ -69,6 +69,27 @@ public class HomeController : Controller
                         };
                         Response.Cookies.Append("username", Hash.Encrypt(check.UserName), option);
                         Response.Cookies.Append("password", Hash.Encrypt(us.Password), option);
+                        if (!check.verifyAccount)
+                        {
+                            return RedirectToAction("VerifyCode");
+                        }
+                        else if (check.RoleID == 1)
+                        {
+                            return RedirectToAction("Profile", "User");
+                        }
+                        else if (check.RoleID == 2)
+                        {
+                            return RedirectToAction("Manager", "HRM");
+                        }
+                        else if (check.RoleID == 3)
+                        {
+                            return RedirectToAction("ManagerUser", "Admin");
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index");
+
+                        }
                     }
                     else
                     {
@@ -79,8 +100,23 @@ public class HomeController : Controller
                     {
                         return RedirectToAction("VerifyCode");
                     }
+                    else if (check.RoleID == 1)
+                    {
+                        return RedirectToAction("Profile", "User");
+                    }
+                    else if (check.RoleID == 2)
+                    {
+                        return RedirectToAction("Manager", "HRM");
+                    }
+                    else if (check.RoleID == 3)
+                    {
+                        return RedirectToAction("ManagerUser", "Admin");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index");
 
-                    return RedirectToAction("Index");
+                    }
                 }
                 else
                 {
@@ -164,7 +200,7 @@ public class HomeController : Controller
                     }
                     else if (checkogin.RoleID == 3)
                     {
-                        return RedirectToAction("Index", "Admin");
+                        return RedirectToAction("ManagerUser", "Admin");
                     }
                     else
                     {

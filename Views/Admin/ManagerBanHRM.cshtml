@@ -1,0 +1,381 @@
+@{
+    ViewData["Title"] = "ManagerBanHRM";
+    List<User> listBanHRM = ViewBag.listBanHRM;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+
+    <title>Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin-top: 20px;
+            background: #f8f8f8
+        }
+    </style>
+</head>
+
+<body>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <div class="container">
+        <div class="row flex-lg-nowrap">
+            <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+                <div class="card p-3">
+                    <div class="e-navlist e-navlist--active-bg">
+                        <ul class="nav">
+
+                            <li class="nav-item"><a class="nav-link px-2" asp-controller="Admin"
+                                    asp-action="ManagerUser" target=""><i
+                                        class="fa fa-fw fa-th mr-1"></i><span>Manager</span></a></li>
+                            <li class="nav-item"><a class="nav-link px-2" target=""><i
+                                        class="fa fa-ban mr-1"></i><span>Ban</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="e-tabs mb-3 px-3">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link" asp-action="ManagerBanUser"
+                                asp-controller="Admin">Users</a></li>
+                        <li class="nav-item"><a class="nav-link active">HRM</a></li>
+                    </ul>
+                </div>
+
+                <div class="row flex-lg-nowrap">
+                    <div class="col mb-3">
+                        <div class="e-panel card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h6 class="mr-2"><span>Users</span><small class="px-1">Be a wise leader</small></h6>
+                                </div>
+                                <div class="e-table">
+                                    <div class="table-responsive table-lg mt-3">
+                                        <table id="example" class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="align-top">NO</th>
+                                                    <th>Photo</th>
+                                                    <th class="max-width">Name</th>
+                                                    <th class="sortable">Date join</th>
+                                                    <th>Verify</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    int i = 0;
+                                                }
+
+                                                @foreach (var info in listBanHRM)
+                                                {
+                                                    i++;
+                                                    <tr>
+                                                        <td class="align-middle">@i</td>
+                                                        <td class="align-middle text-center">
+                                                            <div class="bg-light d-inline-flex justify-content-center align-items-center align-top"
+                                                                style="width: 35px; height: 35px; border-radius: 3px;">
+                                                                <i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-nowrap align-middle"> @info.UserName</td>
+                                                        <td class="text-nowrap align-middle"><span>@info.joinin</span></td>
+                                                        <td class="text-center align-middle">
+
+                                                            @if (!info.verifyAccount)
+                                                            {
+                                                                <i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off">
+                                                                </i>
+                                                            }
+                                                            else
+                                                            {
+                                                                <i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on">
+                                                                </i>
+                                                            }
+
+
+                                                        </td>
+                                                        <td class="text-center align-middle">
+                                                            <div class="btn-group align-top">
+                                                                <button class="btn btn-sm btn-outline-primary badge"
+                                                                    type="button" 
+                                                                
+                                                                    onclick="confirmRestore(@info.ID,'@info.UserName')">Restore Ban</button>
+                                                                <!-- <button class="btn btn-sm btn-outline-secondary badge"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </button> -->
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <ul class="pagination mt-3 mb-0">
+                                            <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
+                                            <li class="active page-item"><a href="#" class="page-link">1</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">›</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">»</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal fade" role="dialog" tabindex="-1" id="user-form-modal">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit User</h5>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="py-1">
+                                    <form class="form" novalidate>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>UserName</label>
+                                                            <input class="form-control" type="text" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input class="form-control" type="text" value="" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>First name</label>
+                                                            <input class="form-control" type="text"
+                                                                placeholder="Enter first name update">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Last name</label>
+                                                            <input class="form-control" type="text" value=""
+                                                                placeholder="Enter last name update">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Phone</label>
+                                                            <input class="form-control" type="text"
+                                                                placeholder="Enter phone update">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Birthday</label>
+                                                            <input class="form-control" type="text" value=""
+                                                                placeholder="Enter birthday update">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <label class="col-12 mb-2">Gender</label>
+                                                    <div class="col-6">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="gender"
+                                                                id="genderMale" value="male">
+                                                            <label class="form-check-label"
+                                                                for="genderMale">Male</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="gender"
+                                                                id="genderFemale" value="female">
+                                                            <label class="form-check-label"
+                                                                for="genderFemale">Female</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Address</label>
+                                                            <input class="form-control" type="text"
+                                                                placeholder="Enter Address update">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="row">
+                                                    <div class="col mb-3">
+                                                        <div class="form-group">
+                                                            <label>About</label>
+                                                            <textarea class="form-control" rows="5"
+                                                                placeholder="My Bio"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div class="col-12 col-sm-6 mb-3">
+                                                <div class="mb-2"><b>Change Password</b></div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Current Password</label>
+                                                            <input class="form-control" type="password"
+                                                                placeholder="••••••">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>New Password</label>
+                                                            <input class="form-control" type="password"
+                                                                placeholder="••••••">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Confirm <span
+                                                                    class="d-none d-xl-inline">Password</span></label>
+                                                            <input class="form-control" type="password"
+                                                                placeholder="••••••">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                                                <div class="mb-2"><b>Keeping in Touch</b></div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label>Email Notifications</label>
+                                                        <div class="custom-controls-stacked px-2">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="notifications-blog" checked>
+                                                                <label class="custom-control-label"
+                                                                    for="notifications-blog">Blog posts</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="notifications-news" checked>
+                                                                <label class="custom-control-label"
+                                                                    for="notifications-news">Newsletter</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="notifications-offers" checked>
+                                                                <label class="custom-control-label"
+                                                                    for="notifications-offers">Personal Offers</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-end">
+                                                <button class="btn btn-primary" type="submit">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        function confirmRestore(userId, UserName) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger mr-4'
+                },
+                buttonsStyling: false
+            });
+              swalWithBootstrapButtons.fire({
+             title: "Are you sure?",
+             html: "You Will restore <b style='color: red;'>" + UserName + "</b>",
+             icon: "warning",
+             showCancelButton: true,
+              confirmButtonText: "Yes, Restore it!",
+             cancelButtonText: "No, cancel!",
+              reverseButtons: true
+          }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Admin/Restore/" + userId,
+                        data: { userId: userId },
+                        success: function (response) {
+                            swalWithBootstrapButtons.fire({
+                                title: "Restore Success!",
+                                text: "The User has been Restore.",
+                                icon: "success",
+                                didClose: () => {
+                                    location.reload();
+                                }
+                            });
+                        },
+                        error: function () {
+                            alert('Lỗi khi gửi yêu cầu AJAX');
+                        }
+                    });
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        icon: "error"
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -51,6 +51,11 @@ namespace Lab01.Middleware
                         redirect = true;
                         redirectUrl = "/HRM/Manager";
                     }
+                    else if (getinfo.RoleID == 3 && !path.StartsWith("/Admin"))
+                    {
+                        redirect = true;
+                        redirectUrl = "/Admin/ManagerUser";
+                    }
                 }
 
                 if (redirect)

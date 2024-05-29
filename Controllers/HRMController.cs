@@ -21,17 +21,20 @@ namespace Lab01.Controllers
         }
         public IActionResult Manager()
         {
-            string sql = "select * from users where RoleID = @RoleID";
-            List<User> listUser = this._db.Set<User>().FromSqlRaw(sql, new SqlParameter("@RoleID", 1)).ToList();
+            string sql = "select * from users where RoleID = @RoleID and UserStatus != @UserStatus";
+            List<User> listUser = this._db.Set<User>().FromSqlRaw(sql, new SqlParameter("@RoleID", 1),
+            new SqlParameter("@UserStatus", 1)).ToList();
             ViewBag.listUser = listUser;
             return View();
         }
         [HttpPost]
         public IActionResult Manager(InputData.InputModelUpdateInfo info)
         {
-            string sql = "select * from users where RoleID = @RoleID";
-            List<User> listUser = this._db.Set<User>().FromSqlRaw(sql, new SqlParameter("@RoleID", 1)).ToList();
+            string sql = "select * from users where RoleID = @RoleID and UserStatus != @UserStatus";
+            List<User> listUser = this._db.Set<User>().FromSqlRaw(sql, new SqlParameter("@RoleID", 1),
+            new SqlParameter("@UserStatus", 1)).ToList();
             ViewBag.listUser = listUser;
+
 
             User getInfo = this._db.users.FirstOrDefault(u => u.UserName == info.UserName);
             if (getInfo != null)

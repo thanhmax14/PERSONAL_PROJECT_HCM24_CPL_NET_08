@@ -166,6 +166,66 @@ namespace Lab01.Controllers
             }
             return Json(new { success = false });
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upload(IFormFile file)
+        {
+            try
+            {
+                // Handle file upload logic here
+                if (file != null && file.Length > 0)
+                {
+                    string fileExtension = Path.GetExtension(file.FileName).ToLower();
+                    string[] allowedExtensions = { ".jpg", ".png" };
+
+                    if (allowedExtensions.Contains(fileExtension))
+                    {
+                        var maxFileSize = 5 * 1024 * 1024; // 5MB
+                        if (file.Length > maxFileSize)
+                        {
+                            ViewBag.Message = "File size exceeds the maximum limit of 5MB.";
+                            return Json(new { success = false, message = "File size exceeds the maximum limit of 5MB." });
+                        }
+
+                        // Save the file to the server or perform any other necessary operations
+                        var fileName = Path.GetFileName(file.FileName);
+                        //  Format  Name - Year - Month - day - house - minus i second
+                        var timestamp = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss");
+                        var newFileName = $"{fileName}_{timestamp}{fileExtension}";
+
+                        // Define the uploads folder path
+                        var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
+
+                        // Ensure the directory exists
+                        if (!Directory.Exists(uploadsFolderPath))
+                        {
+                            Directory.CreateDirectory(uploadsFolderPath);
+                        }
+
+                        var filePath = Path.Combine(uploadsFolderPath, newFileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                        }
+                        // Display success message
+                        return Json(new { success = true, message = "File uploaded successfully" });
+                    }
+                    else
+                    {
+                        return Json(new { success = false, message = "Only jpg, png files are allowed." });
+                    }
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Please select a file to upload." });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
 
     }
 }

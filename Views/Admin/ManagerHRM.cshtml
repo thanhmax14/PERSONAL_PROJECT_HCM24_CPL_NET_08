@@ -1,14 +1,15 @@
 @model Lab01.Models.InputData.InputModelUpdateInfo;
-
 @{
-    ViewData["Title"] = "Manager";
-    List<User> listUser = ViewBag.listUser;
+    ViewData["Title"] = "ManagerHRM";
+    List<User> listHRM = ViewBag.listHRM;
 }
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
+
+
     <title>Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,29 +40,23 @@
                 <div class="card p-3">
                     <div class="e-navlist e-navlist--active-bg">
                         <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link px-2" asp-controller="HRM" asp-action="Profile">
-                                    <i class="fa fa-fw fa-cog mr-1"></i><span>Profile</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link px-2" asp-controller="HRM" asp-action="Manager">
-                                    <i class="fa fa-fw fa-th mr-1"></i><span>Manager</span>
-                                </a>
+                            <li class="nav-item"><a class="nav-link px-2" target=""><i
+                                        class="fa fa-fw fa-th mr-1"></i><span>Manager</span></a></li>
+                            <li class="nav-item"><a class="nav-link px-2" asp-action="ManagerBanUser"
+                                    class="fa fa-ban mr-1"></i><span>Ban</span></a>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="e-tabs mb-3 px-3">
                     <ul class="nav nav-tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#">Users</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-action="ManagerUser"
+                                asp-controller="Admin">Users</a></li>
+                        <li class="nav-item"><a class="nav-link active">HRM</a></li>
                     </ul>
                 </div>
-
-
 
                 <div class="row flex-lg-nowrap">
                     <div class="col mb-3">
@@ -85,13 +80,14 @@
                                             </thead>
                                             <tbody>
                                                 @{
-                                                    int i = 1;
+                                                    int i = 0;
                                                 }
 
-                                                @foreach (var info in listUser)
+                                                @foreach (var info in listHRM)
                                                 {
+                                                    i++;
                                                     <tr>
-                                                        <td class="align-middle">@i++</td>
+                                                        <td class="align-middle">@i</td>
                                                         <td class="align-middle text-center">
                                                             <div class="bg-light d-inline-flex justify-content-center align-items-center align-top"
                                                                 style="width: 35px; height: 35px; border-radius: 3px;">
@@ -116,14 +112,19 @@
 
                                                         </td>
                                                         <td class="text-center align-middle">
-                                                            <div class="btn-group align-top">
-                                                                <button class="btn btn-sm btn-outline-secondary badge"
-                                                                    type="button" data-toggle="modal"
-                                                                    data-target="#user-form-modal"
-                                                                    onclick="getInfo(@info.ID)">Edit</button>
-                                                                <!-- <button class="btn btn-sm btn-outline-secondary badge"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                             </button> -->
-                                                            </div>
+                                                            <button class="btn btn-sm btn-outline-secondary badge"
+                                                                type="button" data-toggle="modal"
+                                                                data-target="#user-form-modal"
+                                                                onclick="getInfo(@info.ID)">Edit
+                                                            </button>
+                                                            <button onclick="confirmRemove(@info.ID , '@info.UserName')"
+                                                                class="btn btn-sm btn-outline-secondary badge red-button"
+                                                                type="button"><i class="fa fa-trash"></i></button>
+                                                            <style>
+                                                                .red-button {
+                                                                    color: red;
+                                                                }
+                                                            </style>
                                                         </td>
                                                     </tr>
                                                 }
@@ -154,15 +155,15 @@
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Edit User</h5>
+                                <h5 class="modal-title" style="text-align: center;">Edit HRM</h5>
                                 <button type="button" class="close" data-dismiss="modal">
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <div class="py-1">
-                                    <form class="form" asp-controller="HRM" asp-action="Manager" method="post"
-                                        id="edit-user-form">
+                                    <form class="form" asp-controller="Admin" asp-action="ManagerHRM"
+                                        id="edit-user-form" method="post">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="row">
@@ -348,7 +349,6 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
@@ -357,12 +357,13 @@
 </body>
 
 </html>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
         function getInfo(userId) {
             $.ajax({
-                url: '/HRM/GetInfoUser/' + userId,
+                url: '/Admin/GetInfoUser/' + userId,
                 method: 'POST',
                 success: function (data) {
                     // Define the modal variable correctly
@@ -398,10 +399,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                             }).then((result) => {
-                                                                                             if (result.isConfirmed) {
+                                 }).then((result) => {
+                                if (result.isConfirmed) {
                 }
-                                                                                            });
+                              });
         </text>
 
     }
@@ -415,11 +416,61 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                                 }).then((result) => {
-                                                                                                 if (result.isConfirmed) {
+                                  }).then((result) => {
+                                if (result.isConfirmed) {
                 }
-                                                                                                });
+                              });
         </text>
 
     }
+
+        function confirmRemove(userId, UserName) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger mr-4'
+                },
+                buttonsStyling: false
+            });
+
+            swalWithBootstrapButtons.fire({
+                title: "Are you sure?",
+                html: "You Will Ban <b style='color: red;'>" + UserName + "</b>",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, Ban it!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Admin/ConfirmBan/" + userId,
+                        data: { userId: userId },
+                        success: function (response) {
+                            swalWithBootstrapButtons.fire({
+                                title: "Success!",
+                                html: "The User <b style='color: red;'>" + UserName + "</b> has been Baned",
+                                icon: "success",
+                                didClose: () => {
+                                    location.reload(); // Reload trang sau khi cửa sổ thông báo được đóng
+                                }
+                            });
+                        },
+                        error: function () {
+                            alert('Lỗi khi gửi yêu cầu AJAX');
+                        }
+                    });
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire({
+                        title: "Cancelled",
+                        text: "Your imaginary file is safe :)",
+                        icon: "error"
+                    });
+                }
+            });
+        }
 </script>
