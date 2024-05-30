@@ -48,6 +48,13 @@
                         </ul>
                     </div>
                 </div>
+                <br>
+                <div class="card p-3">
+                    <button class="btn btn-block btn-secondary" onclick="Logout()">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
             </div>
             <div class="col">
                 <div class="e-tabs mb-3 px-3">
@@ -399,10 +406,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                 }).then((result) => {
-                                if (result.isConfirmed) {
+                                     }).then((result) => {
+                                    if (result.isConfirmed) {
                 }
-                              });
+                                  });
         </text>
 
     }
@@ -416,10 +423,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                  }).then((result) => {
-                                if (result.isConfirmed) {
+                                      }).then((result) => {
+                                    if (result.isConfirmed) {
                 }
-                              });
+                                  });
         </text>
 
     }
@@ -473,4 +480,20 @@
                 }
             });
         }
+    function Logout() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You Will logout?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, I'm sure!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Logout";
+            }
+        });
+
+    }
 </script>

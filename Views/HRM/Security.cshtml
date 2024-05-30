@@ -35,6 +35,13 @@
                         </ul>
                     </div>
                 </div>
+                <br>
+                <div class="card p-3">
+                    <button class="btn btn-block btn-secondary" onclick="Logout()">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
             </div>
             <div class="col">
                 <div class="row">
@@ -289,7 +296,22 @@
             });
         }
 
+    function Logout() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You Will logout?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, I'm sure!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/HRM/Logout";
+            }
+        });
 
+    }
 
 
 </script>

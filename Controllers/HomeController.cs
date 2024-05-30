@@ -300,12 +300,14 @@ public class HomeController : Controller
     }
 
 
-    public async Task<IActionResult> SignOut()
+    public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         await HttpContext.SignOutAsync(MicrosoftAccountDefaults.AuthenticationScheme);
+        HttpContext.Session.Clear();
         return RedirectToAction("Index", "Home");
     }
+
 
     public IActionResult Register()
     {
@@ -385,11 +387,6 @@ public class HomeController : Controller
         return RedirectToAction("Index");
 
 
-    }
-    public async Task<IActionResult> Logout()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Index", "Home");
     }
     public IActionResult checkCode(string allnumber)
     {

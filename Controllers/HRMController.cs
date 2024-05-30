@@ -245,6 +245,10 @@ namespace Lab01.Controllers
             }
             return Json(new { success = false });
         }
-
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

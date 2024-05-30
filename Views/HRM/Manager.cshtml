@@ -53,6 +53,13 @@
 
                     </div>
                 </div>
+                <br>
+                <div class="card p-3">
+                    <button class="btn btn-block btn-secondary" onclick="Logout()">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
             </div>
             <div class="col">
                 <div class="e-tabs mb-3 px-3">
@@ -122,7 +129,7 @@
                                                                     data-target="#user-form-modal"
                                                                     onclick="getInfo(@info.ID)">Edit</button>
                                                                 <!-- <button class="btn btn-sm btn-outline-secondary badge"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                             </button> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </button> -->
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -382,11 +389,28 @@
                 }
             });
         }
+        function Logout() {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You Will logout?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, I'm sure!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/HRM/Logout";
+                }
+            });
+
+        }
     </script>
 }
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
+
     // Kiểm tra nếu có thông báo lỗi từ TempData
     @if (TempData["Messse"] != null)
     {
@@ -398,10 +422,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                             }).then((result) => {
-                                                                                             if (result.isConfirmed) {
+                                                                                                                                     }).then((result) => {
+                                                                                                                                     if (result.isConfirmed) {
                 }
-                                                                                            });
+                                                                                                                                    });
         </text>
 
     }
@@ -415,11 +439,13 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                                 }).then((result) => {
-                                                                                                 if (result.isConfirmed) {
+                                                                                                                                         }).then((result) => {
+                                                                                                                                         if (result.isConfirmed) {
                 }
-                                                                                                });
+                                                                                                                                        });
         </text>
 
     }
+
+
 </script>
