@@ -20,7 +20,7 @@ namespace Lab01.Controllers
         [HttpGet]
         public IActionResult Profile()
         {
-            TempData["Messse"] = null;
+
             var username = HttpContext.Session.GetString("UserName");
             if (username != null)
             {
@@ -183,8 +183,8 @@ namespace Lab01.Controllers
                         var maxFileSize = 5 * 1024 * 1024; // 5MB
                         if (file.Length > maxFileSize)
                         {
-                            ViewBag.Message = "File size exceeds the maximum limit of 5MB.";
-                            return Json(new { success = false, message = "File size exceeds the maximum limit of 5MB." });
+                            TempData["MessseErro"] = "File size exceeds the maximum limit of 5MB";
+                            return RedirectToAction("Profile");
                         }
 
                         // Save the file to the server or perform any other necessary operations
@@ -194,7 +194,7 @@ namespace Lab01.Controllers
                         var newFileName = $"{fileName}_{timestamp}{fileExtension}";
 
                         // Define the uploads folder path
-                        var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
+                        var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
 
                         // Ensure the directory exists
                         if (!Directory.Exists(uploadsFolderPath))
@@ -208,22 +208,28 @@ namespace Lab01.Controllers
                         {
                             file.CopyTo(stream);
                         }
-                        // Display success message
-                        return Json(new { success = true, message = "File uploaded successfully" });
+
+                        TempData["Messse"] = "Your avatar update was successful!";
+                        return RedirectToAction("Profile");
                     }
                     else
                     {
-                        return Json(new { success = false, message = "Only jpg, png files are allowed." });
+
+                        TempData["MessseErro"] = "Only jpg, png files are allowed.";
+                        return RedirectToAction("Profile");
                     }
                 }
                 else
                 {
-                    return Json(new { success = false, message = "Please select a file to upload." });
+
+                    TempData["MessseErro"] = "Please select a file to upload.";
+                    return RedirectToAction("Profile");
                 }
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = ex.Message });
+                TempData["MessseErro"] = ex.Message;
+                return RedirectToAction("Profile");
             }
         }
 
