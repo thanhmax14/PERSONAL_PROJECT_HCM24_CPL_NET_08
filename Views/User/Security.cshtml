@@ -176,7 +176,13 @@
                             <div class="card-body">
                                 <h6 class="card-title font-weight-bold">Support</h6>
                                 <p class="card-text">Get fast, free help from our friendly assistants.</p>
-                                <button onclick="BlockAccount()" class="btn btn-primary">Contact Us</button>
+                                <button type="button" class="btn btn-primary" onclick='sendEmail()'>Contact Us</button>
+
+                                <script>
+                                    function sendEmail() {
+                                        window.location.href = "mailto:thanhpqce171732@fpt.edu.vn";
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>

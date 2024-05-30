@@ -18,8 +18,7 @@
 
 <body>
     <header class="cd__intro">
-        <h1> Wellcom back </h1>
-        <p>press button to Login</p>
+
         <div class="cd__action">
             <a asp-action="login" asp-controller="Home" title="Back to login" class="cd__btn back">Back to Login</a>
         </div>
@@ -159,8 +158,8 @@
                 countdown.style.display = "none";
             }
         }, 1000);
-       
-         $.ajax({
+
+        $.ajax({
             url: '/Home/VerifyCode',
             method: 'POST',
             success: function (response) {

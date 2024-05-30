@@ -92,18 +92,17 @@
                                             </thead>
                                             <tbody>
                                                 @{
-                                                    int i = 1;
+                                                    int i = 0;
                                                 }
 
                                                 @foreach (var info in listUser)
                                                 {
+                                                    i++;
                                                     <tr>
-                                                        <td class="align-middle">@i++</td>
+                                                        <td class="align-middle">@i</td>
                                                         <td class="align-middle text-center">
-                                                            <div class="bg-light d-inline-flex justify-content-center align-items-center align-top"
-                                                                style="width: 35px; height: 35px; border-radius: 3px;">
-                                                                <i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i>
-                                                            </div>
+                                                            <img src="/uploads/@info.Image" style="opacity: 0.8;" alt=""
+                                                                width="100px" height="100px">
                                                         </td>
                                                         <td class="text-nowrap align-middle"> @info.UserName</td>
                                                         <td class="text-nowrap align-middle"><span>@info.joinin</span></td>
@@ -129,7 +128,7 @@
                                                                     data-target="#user-form-modal"
                                                                     onclick="getInfo(@info.ID)">Edit</button>
                                                                 <!-- <button class="btn btn-sm btn-outline-secondary badge"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </button> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </button> -->
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -138,18 +137,18 @@
                                         </table>
                                     </div>
 
-                                    <div class="d-flex justify-content-center">
-                                        <ul class="pagination mt-3 mb-0">
-                                            <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
-                                            <li class="active page-item"><a href="#" class="page-link">1</a></li>
-                                            <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                            <li class="page-item"><a href="#" class="page-link">3</a></li>
-                                            <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                            <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                            <li class="page-item"><a href="#" class="page-link">›</a></li>
-                                            <li class="page-item"><a href="#" class="page-link">»</a></li>
-                                        </ul>
-                                    </div>
+                                    @* <div class="d-flex justify-content-center">
+                                    <ul class="pagination mt-3 mb-0">
+                                    <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
+                                    <li class="active page-item"><a href="#" class="page-link">1</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">›</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">»</a></li>
+                                    </ul>
+                                    </div> *@
                                 </div>
                             </div>
                         </div>
@@ -422,10 +421,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                                                                     }).then((result) => {
-                                                                                                                                     if (result.isConfirmed) {
+                                                                                                                                                     }).then((result) => {
+                                                                                                                                                     if (result.isConfirmed) {
                 }
-                                                                                                                                    });
+                                                                                                                                                    });
         </text>
 
     }
@@ -439,10 +438,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                                                                         }).then((result) => {
-                                                                                                                                         if (result.isConfirmed) {
+                                                                                                                                                         }).then((result) => {
+                                                                                                                                                         if (result.isConfirmed) {
                 }
-                                                                                                                                        });
+                                                                                                                                                        });
         </text>
 
     }
