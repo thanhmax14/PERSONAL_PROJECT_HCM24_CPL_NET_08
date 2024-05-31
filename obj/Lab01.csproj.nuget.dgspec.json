@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[8.0.5, )"
@@ -79,6 +83,18 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.5, )"
+            },
+            "Microsoft.Owin.Host.SystemWeb": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "Microsoft.Owin.Security.Cookies": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "Microsoft.Owin.Security.Facebook": {
+              "target": "Package",
+              "version": "[4.2.2, )"
             }
           },
           "imports": [

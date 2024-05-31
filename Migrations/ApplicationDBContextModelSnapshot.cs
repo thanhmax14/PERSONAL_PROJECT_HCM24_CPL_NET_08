@@ -142,7 +142,7 @@ namespace Lab01.Migrations
                             RoleID = 1,
                             UserName = "thanhmax14",
                             UserStatus = false,
-                            joinin = new DateTime(2024, 5, 26, 11, 34, 27, 777, DateTimeKind.Local).AddTicks(1023),
+                            joinin = new DateTime(2024, 5, 31, 9, 41, 54, 138, DateTimeKind.Local).AddTicks(1024),
                             verifyAccount = true
                         },
                         new
@@ -158,7 +158,7 @@ namespace Lab01.Migrations
                             RoleID = 2,
                             UserName = "HRM",
                             UserStatus = false,
-                            joinin = new DateTime(2024, 5, 26, 11, 34, 27, 777, DateTimeKind.Local).AddTicks(1037),
+                            joinin = new DateTime(2024, 5, 31, 9, 41, 54, 138, DateTimeKind.Local).AddTicks(1038),
                             verifyAccount = true
                         },
                         new
@@ -174,7 +174,7 @@ namespace Lab01.Migrations
                             RoleID = 3,
                             UserName = "admin",
                             UserStatus = false,
-                            joinin = new DateTime(2024, 5, 26, 11, 34, 27, 777, DateTimeKind.Local).AddTicks(1040),
+                            joinin = new DateTime(2024, 5, 31, 9, 41, 54, 138, DateTimeKind.Local).AddTicks(1041),
                             verifyAccount = true
                         });
                 });

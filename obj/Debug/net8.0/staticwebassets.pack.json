@@ -257,6 +257,14 @@
       "PackagePath": "staticwebassets\\uploads\\77.jpg_2024_05_30_18_47_59.jpg"
     },
     {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\77.jpg_2024_05_31_10_20_31.jpg",
+      "PackagePath": "staticwebassets\\uploads\\77.jpg_2024_05_31_10_20_31.jpg"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\HNS_GF89H586A6B_EclipseRed_Side.jpg_2024_05_31_10_03_56.jpg",
+      "PackagePath": "staticwebassets\\uploads\\HNS_GF89H586A6B_EclipseRed_Side.jpg_2024_05_31_10_03_56.jpg"
+    },
+    {
       "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\Screenshot 2024-05-10 220814.png_2024_05_30_18_35_47.png",
       "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-05-10 220814.png_2024_05_30_18_35_47.png"
     },
@@ -279,6 +287,18 @@
     {
       "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\bánh.png_2024_05_30_18_21_29.png",
       "PackagePath": "staticwebassets\\uploads\\bánh.png_2024_05_30_18_21_29.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\bánh.png_2024_05_31_09_51_17.png",
+      "PackagePath": "staticwebassets\\uploads\\bánh.png_2024_05_31_09_51_17.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\ca.jpg_2024_05_31_09_49_26.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ca.jpg_2024_05_31_09_49_26.jpg"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\tải xuống.png_2024_05_31_10_26_17.png",
+      "PackagePath": "staticwebassets\\uploads\\tải xuống.png_2024_05_31_10_26_17.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab01.Microsoft.AspNetCore.StaticWebAssets.props",

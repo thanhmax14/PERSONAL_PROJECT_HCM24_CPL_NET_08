@@ -53,6 +53,16 @@ builder.Services.AddAuthentication(options =>
     microsoftOptions.Scope.Add("profile");
     microsoftOptions.Scope.Add("openid");
     microsoftOptions.SaveTokens = true;
+}).AddFacebook(facebookOptions =>
+{
+    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+    facebookOptions.Events.OnRemoteFailure = context =>
+    {
+        context.Response.Redirect("/Home/Login");
+        context.HandleResponse();
+        return System.Threading.Tasks.Task.CompletedTask;
+    };
 });
 
 
