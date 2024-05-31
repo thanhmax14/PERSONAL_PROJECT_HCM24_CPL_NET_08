@@ -377,6 +377,7 @@ public class HomeController : Controller
                     string code = Hash.RandomCode(5);
                     System.Console.WriteLine("code gui mail: " + code);
                     HttpContext.Session.SetString("code", code);
+                    HttpContext.Session.SetString("codeSentTime", DateTime.Now.ToString("o"));
                     subject = "Veryfi code";
                     bool flag;
                     flag = emailService.SendEmail(recipientEmail, subject, TemplateSendCode(getInfo.LastName + " " + getInfo.FirstName, code));
@@ -390,13 +391,24 @@ public class HomeController : Controller
     }
     public IActionResult checkCode(string allnumber)
     {
-
         var code = HttpContext.Session.GetString("code")?.Replace(" ", "");
-        System.Console.WriteLine("Code gui ve: " + allnumber);
-        if (string.IsNullOrEmpty(code))
+        var codeSentTimeStr = HttpContext.Session.GetString("codeSentTime");
+        if (string.IsNullOrEmpty(code) || string.IsNullOrEmpty(codeSentTimeStr))
         {
             return Json(new { success = false });
         }
+
+        DateTime codeSentTime;
+        if (!DateTime.TryParse(codeSentTimeStr, out codeSentTime))
+        {
+            return Json(new { success = false });
+        }
+        // Check if the code is expired (more than 2 minutes old)
+        if ((DateTime.Now - codeSentTime).TotalMinutes > 2)
+        {
+            return Json(new { success = false });
+        }
+        System.Console.WriteLine("Code gui ve: " + allnumber);
         if (code != allnumber)
         {
             return Json(new { success = false });
@@ -406,16 +418,20 @@ public class HomeController : Controller
         {
             return Json(new { success = false });
         }
+
         var user = this._db.users.FirstOrDefault(u => u.UserName == getUserName);
         if (user == null)
         {
             return Json(new { success = false });
         }
+
         user.verifyAccount = true;
         this._db.users.Update(user);
         this._db.SaveChanges();
+
         return Json(new { success = true });
     }
+
     public IActionResult Forgot()
     {
 

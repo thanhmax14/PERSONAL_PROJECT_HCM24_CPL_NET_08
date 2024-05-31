@@ -107,6 +107,7 @@ namespace Lab01.Controllers
         }
 
         [HttpPost]
+
         public IActionResult Security(InputData.SecurityUser input)
         {
             var username = HttpContext.Session.GetString("UserName");
@@ -182,8 +183,7 @@ namespace Lab01.Controllers
                 if (getInfo != null)
                 {
                     try
-                    {
-                        // Handle file upload logic here
+                    {                 
                         if (file != null && file.Length > 0)
                         {
                             string fileExtension = Path.GetExtension(file.FileName).ToLower();
@@ -196,18 +196,11 @@ namespace Lab01.Controllers
                                 {
                                     TempData["MessseErro"] = "File size exceeds the maximum limit of 5MB";
                                     return RedirectToAction("Profile");
-                                }
-
-                                // Save the file to the server or perform any other necessary operations
-                                var fileName = Path.GetFileName(file.FileName);
-                                //  Format  Name - Year - Month - day - house - minus i second
+                                }                         
+                                var fileName = Path.GetFileName(file.FileName);                          
                                 var timestamp = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss");
-                                var newFileName = $"{fileName}_{timestamp}{fileExtension}";
-
-                                // Define the uploads folder path
+                                var newFileName = $"{fileName}_{timestamp}{fileExtension}";                          
                                 var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
-
-                                // Ensure the directory exists
                                 if (!Directory.Exists(uploadsFolderPath))
                                 {
                                     Directory.CreateDirectory(uploadsFolderPath);

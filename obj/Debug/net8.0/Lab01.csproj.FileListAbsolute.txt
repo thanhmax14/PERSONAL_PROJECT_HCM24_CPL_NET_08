@@ -588,3 +588,11 @@ D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\obj\Debug\net8.0
 D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\obj\Debug\net8.0\Lab01.genruntimeconfig.cache
 D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\obj\Debug\net8.0\ref\Lab01.dll
 D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\appsettings.json
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Microsoft.Owin.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Microsoft.Owin.Host.SystemWeb.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Microsoft.Owin.Security.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Microsoft.Owin.Security.Cookies.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Microsoft.Owin.Security.Facebook.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08\bin\Debug\net8.0\Owin.dll

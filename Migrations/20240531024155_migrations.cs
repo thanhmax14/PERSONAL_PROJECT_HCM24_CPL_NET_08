@@ -77,9 +77,9 @@ namespace Lab01.Migrations
                 columns: new[] { "ID", "AccessFailedCount", "Address", "Birthday", "Email", "FirstName", "Gender", "IdCard", "Image", "LastName", "LockOut", "Password", "Phone", "ResetToken", "RoleID", "UserName", "UserStatus", "joinin", "verifyAccount" },
                 values: new object[,]
                 {
-                    { 1, 0, "Lai Vung", null, "phamquangthanhmax14@gmail.com", "Pham", "Male", null, null, "Quang Thanh", null, "827ccb0eea8a706c4c34a16891f84e7b", "0939371017", null, 1, "thanhmax14", false, new DateTime(2024, 5, 26, 11, 34, 27, 777, DateTimeKind.Local).AddTicks(1023), true },
-                    { 2, 0, "Lai Vung", null, "phamquangthanhmax11@gmail.com", "Le", null, null, null, "Thi Kiwi", null, "827ccb0eea8a706c4c34a16891f84e7b", "1254659899", null, 2, "HRM", false, new DateTime(2024, 5, 26, 11, 34, 27, 777, DateTimeKind.Local).AddTicks(1037), true },
-                    { 3, 0, "Lai Vung", null, "phamquangthanhmax124@gmail.com", "Pham", null, null, null, "Quang Thanh 1", null, "827ccb0eea8a706c4c34a16891f84e7b", "454976486525", null, 3, "admin", false, new DateTime(2024, 5, 26, 11, 34, 27, 777, DateTimeKind.Local).AddTicks(1040), true }
+                    { 1, 0, "Lai Vung", null, "phamquangthanhmax14@gmail.com", "Pham", "Male", null, null, "Quang Thanh", null, "827ccb0eea8a706c4c34a16891f84e7b", "0939371017", null, 1, "thanhmax14", false, new DateTime(2024, 5, 31, 9, 41, 54, 138, DateTimeKind.Local).AddTicks(1024), true },
+                    { 2, 0, "Lai Vung", null, "phamquangthanhmax11@gmail.com", "Le", null, null, null, "Thi Kiwi", null, "827ccb0eea8a706c4c34a16891f84e7b", "1254659899", null, 2, "HRM", false, new DateTime(2024, 5, 31, 9, 41, 54, 138, DateTimeKind.Local).AddTicks(1038), true },
+                    { 3, 0, "Lai Vung", null, "phamquangthanhmax124@gmail.com", "Pham", null, null, null, "Quang Thanh 1", null, "827ccb0eea8a706c4c34a16891f84e7b", "454976486525", null, 3, "admin", false, new DateTime(2024, 5, 31, 9, 41, 54, 138, DateTimeKind.Local).AddTicks(1041), true }
                 });
 
             migrationBuilder.CreateIndex(
