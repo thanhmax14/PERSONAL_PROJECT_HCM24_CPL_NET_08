@@ -37,6 +37,12 @@ builder.Services.AddAuthentication(options =>
 
     options.ClientId = googleAuthNSection["ClientId"];
     options.ClientSecret = googleAuthNSection["ClientSecret"];
+    options.Events.OnRemoteFailure = u =>
+    {
+        u.Response.Redirect("/Home/Login");
+        u.HandleResponse();
+        return System.Threading.Tasks.Task.CompletedTask;
+    };
 })
 .AddMicrosoftAccount(microsoftOptions =>
 {

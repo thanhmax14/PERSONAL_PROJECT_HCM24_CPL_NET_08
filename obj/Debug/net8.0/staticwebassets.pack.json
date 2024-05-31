@@ -1,252 +1,284 @@
 {
   "Files": [
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Lab01.bundle.scp.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Lab01.bundle.scp.css",
       "PackagePath": "staticwebassets\\Lab01.bundle.scp.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\css\\site.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\favicon.ico",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\js\\script.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\js\\site.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab01\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\1.jpg_2024_05_30_18_27_31.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1.jpg_2024_05_30_18_27_31.jpg"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\77.jpg_2024_05_30_18_47_59.jpg",
+      "PackagePath": "staticwebassets\\uploads\\77.jpg_2024_05_30_18_47_59.jpg"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\Screenshot 2024-05-10 220814.png_2024_05_30_18_35_47.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-05-10 220814.png_2024_05_30_18_35_47.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\Screenshot 2024-05-16 174034.png_2024_05_30_14_10_39.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-05-16 174034.png_2024_05_30_14_10_39.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\Screenshot 2024-05-16 174034.png_2024_05_30_14_11_45.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-05-16 174034.png_2024_05_30_14_11_45.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\Screenshot 2024-05-16 174034.png_2024_05_30_18_51_28.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2024-05-16 174034.png_2024_05_30_18_51_28.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\bánh.png_2024_05_30_14_12_06.png",
+      "PackagePath": "staticwebassets\\uploads\\bánh.png_2024_05_30_14_12_06.png"
+    },
+    {
+      "Id": "D:\\SU24\\OJT202\\fsoft\\code\\Lab\\PERSONAL_PROJECT_HCM24_CPL_NET_08\\wwwroot\\uploads\\bánh.png_2024_05_30_18_21_29.png",
+      "PackagePath": "staticwebassets\\uploads\\bánh.png_2024_05_30_18_21_29.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab01.Microsoft.AspNetCore.StaticWebAssets.props",

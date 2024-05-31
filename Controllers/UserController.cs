@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Lab01.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -20,7 +23,7 @@ namespace Lab01.Controllers
         [HttpGet]
         public IActionResult Profile()
         {
-            TempData["Messse"] = null;
+
             var username = HttpContext.Session.GetString("UserName");
             if (username != null)
             {
@@ -38,6 +41,10 @@ namespace Lab01.Controllers
                         Gender = user.Gender,
                         Address = user.Address
                     };
+                    ViewBag.Fullname = user.LastName + " " + user.FirstName;
+                    ViewBag.Role = "User";
+                    ViewBag.jonin = user.joinin;
+                    ViewBag.img = user.Image;
                     return View(model);
                 }
                 return NotFound("User not found");
@@ -87,6 +94,14 @@ namespace Lab01.Controllers
 
         public IActionResult Security()
         {
+            var username = HttpContext.Session.GetString("UserName");
+
+            var user = _db.users.FirstOrDefault(u => u.UserName == username);
+            ViewBag.Fullname = user.LastName + " " + user.FirstName;
+
+            ViewBag.Role = "User";
+            ViewBag.jonin = user.joinin;
+            ViewBag.img = user.Image;
 
             return View();
         }
@@ -154,6 +169,92 @@ namespace Lab01.Controllers
                 }
             }
             return Json(new { success = false });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upload(IFormFile file)
+        {
+
+            var username = HttpContext.Session.GetString("UserName");
+            if (username != null)
+            {
+                User getInfo = this._db.users.FirstOrDefault(u => u.UserName == username);
+                if (getInfo != null)
+                {
+                    try
+                    {
+                        // Handle file upload logic here
+                        if (file != null && file.Length > 0)
+                        {
+                            string fileExtension = Path.GetExtension(file.FileName).ToLower();
+                            string[] allowedExtensions = { ".jpg", ".png" };
+
+                            if (allowedExtensions.Contains(fileExtension))
+                            {
+                                var maxFileSize = 5 * 1024 * 1024; // 5MB
+                                if (file.Length > maxFileSize)
+                                {
+                                    TempData["MessseErro"] = "File size exceeds the maximum limit of 5MB";
+                                    return RedirectToAction("Profile");
+                                }
+
+                                // Save the file to the server or perform any other necessary operations
+                                var fileName = Path.GetFileName(file.FileName);
+                                //  Format  Name - Year - Month - day - house - minus i second
+                                var timestamp = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss");
+                                var newFileName = $"{fileName}_{timestamp}{fileExtension}";
+
+                                // Define the uploads folder path
+                                var uploadsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+
+                                // Ensure the directory exists
+                                if (!Directory.Exists(uploadsFolderPath))
+                                {
+                                    Directory.CreateDirectory(uploadsFolderPath);
+                                }
+
+                                var filePath = Path.Combine(uploadsFolderPath, newFileName);
+
+                                using (var stream = new FileStream(filePath, FileMode.Create))
+                                {
+                                    file.CopyTo(stream);
+                                }
+
+                                getInfo.Image = newFileName;
+                                this._db.Update(getInfo);
+                                this._db.SaveChanges();
+                                TempData["Messse"] = "Your avatar update was successful!";
+                                return RedirectToAction("Profile");
+                            }
+                            else
+                            {
+
+                                TempData["MessseErro"] = "Only jpg, png files are allowed.";
+                                return RedirectToAction("Profile");
+                            }
+                        }
+                        else
+                        {
+
+                            TempData["MessseErro"] = "Please select a file to upload.";
+                            return RedirectToAction("Profile");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["MessseErro"] = ex.Message;
+                        return RedirectToAction("Profile");
+                    }
+                }
+            }
+            TempData["MessseErro"] = "Can't Find Info User!";
+            return RedirectToAction("Profile");
+
+        }
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
 
     }

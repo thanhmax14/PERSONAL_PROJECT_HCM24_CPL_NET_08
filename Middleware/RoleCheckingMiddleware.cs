@@ -16,42 +16,56 @@ namespace Lab01.Middleware
         public async Task Invoke(HttpContext context, ApplicationDBContext dBContext)
         {
             var path = context.Request.Path.Value;  // Get Path URL
-            var role = context.Session.GetInt32("RoleID");
-            System.Console.WriteLine(role);
-            if (!role.HasValue)
+            string username = context.Session.GetString("UserName");
+            var getinfo = dBContext.users.FirstOrDefault(u => u.UserName == username);
+
+            if (getinfo != null)
             {
-                if (path.StartsWith("/User") && role != 1)
+                System.Console.WriteLine(getinfo.RoleID);
+                bool redirect = false;
+                string redirectUrl = "/Home/AccessDenied";
+                if (getinfo.verifyAccount)
                 {
-                    context.Response.Redirect("/Home/AccessDenied");
+
+
+                    if (path.StartsWith("/User") && getinfo.RoleID != 1)
+                    {
+                        redirect = true;
+                    }
+                    else if (path.StartsWith("/Admin") && getinfo.RoleID != 3)
+                    {
+                        redirect = true;
+                    }
+                    else if (path.StartsWith("/HRM") && getinfo.RoleID != 2)
+                    {
+                        redirect = true;
+                    }
+
+                    if (getinfo.RoleID == 1 && !path.StartsWith("/User"))
+                    {
+                        redirect = true;
+                        redirectUrl = "/User/Profile";
+                    }
+                    else if (getinfo.RoleID == 2 && !path.StartsWith("/HRM"))
+                    {
+                        redirect = true;
+                        redirectUrl = "/HRM/Manager";
+                    }
+                    else if (getinfo.RoleID == 3 && !path.StartsWith("/Admin"))
+                    {
+                        redirect = true;
+                        redirectUrl = "/Admin/ManagerUser";
+                    }
+                }
+
+                if (redirect)
+                {
+                    context.Response.Redirect(redirectUrl);
                     return;
                 }
-                else if (path.StartsWith("/Admin") && role != 3)
-                {
-                    context.Response.Redirect("/Home/AccessDenied");
-                    return;
-                }
-                else if (path.StartsWith("/HRM") && role != 2)
-                {
-                    context.Response.Redirect("/Home/AccessDenied");
-                    return;
-                }
-                //===================================================
-                // if (role == 1)
-                // {
-                //     context.Response.Redirect("/User/Profile");
-                //     return;
-                // }
-                // else if (path.StartsWith("/Admin") && role != 3)
-                // {
-                //     context.Response.Redirect("/Home/AccessDenied");
-                //     return;
-                // }
-                // else if (path.StartsWith("/HRM") && role != 2)
-                // {
-                //     context.Response.Redirect("/Home/AccessDenied");
-                //     return;
-                // }
             }
+
+
 
             await _next(context);
         }

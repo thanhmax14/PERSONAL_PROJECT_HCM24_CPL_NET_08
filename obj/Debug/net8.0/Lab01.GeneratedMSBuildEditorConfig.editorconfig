@@ -18,6 +18,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\SU24\OJT202\fsoft\code\Lab\PERSONAL_PROJECT_HCM24_CPL_NET_08
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Admin/ManagerBanHRM.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlckJhbkhSTS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Admin/ManagerBanUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlckJhblVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Admin/ManagerHRM.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlckhSTS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Admin/ManagerUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlclVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Home/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +64,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Home/VerifyCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZnlDb2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/HRM/Manager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJNXE1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/HRM/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJNXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/HRM/Security.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJNXFNlY3VyaXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/SU24/OJT202/fsoft/code/Lab/PERSONAL_PROJECT_HCM24_CPL_NET_08/Views/Shared/Error.cshtml]

@@ -1,5 +1,4 @@
 @model Lab01.Models.InputData.InputModelUpdateInfo;
-
 @{
     ViewData["Title"] = "Profile";
 }
@@ -30,11 +29,25 @@
                 <div class="card p-3">
                     <div class="nav nav-borders">
                         <ul class="nav">
-                            <li class="nav-item"><a class="nav-link px-2 active"
-                                    href="https://www.bootdey.com/snippets/view/bs4-edit-profile-page"
-                                    target="__blank"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+                            <li class="nav-item">
+                                <a class="nav-link px-2" asp-controller="HRM" asp-action="Profile">
+                                    <i class="fa fa-fw fa-cog mr-1"></i><span>Profile</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link px-2" asp-controller="HRM" asp-action="Manager">
+                                    <i class="fa fa-fw fa-th mr-1"></i><span>Manager</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
+                </div>
+                <br>
+                <div class="card p-3">
+                    <button class="btn btn-block btn-secondary" onclick="Logout()">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Logout</span>
+                    </button>
                 </div>
             </div>
             <div class="col">
@@ -45,7 +58,6 @@
                                 <div class="e-profile">
                                     <div class="row">
                                         <div class="col-12 col-sm-auto mb-3">
-
                                             <div class="mx-auto" style="width: 140px;">
                                                 <img id="preview" src="/uploads/@ViewBag.img"
                                                     class="d-flex justify-content-center align-items-center rounded"
@@ -59,7 +71,7 @@
                                                 @* <p class="mb-0">thanhmax14</p> *@
                                                 <div class="text-muted"><small>Last seen 2 hours ago</small></div>
                                                 <div class="mt-2">
-                                                    @using (Html.BeginForm("Upload", "User", FormMethod.Post, new
+                                                    @using (Html.BeginForm("Upload", "HRM", FormMethod.Post, new
                                                     {
                                                         enctype = "multipart/form-data",
                                                         id = "uploadForm"
@@ -74,8 +86,7 @@
                                                             <span>Change Photo</span>
                                                         </button>
                                                         <br />
-                                                        <img id="preview" src="#" alt="Image preview"
-                                                            style="display:none; max-width: 100%; height: auto; margin-top: 10px;" />
+
                                                         <br />
                                                         <input id="uploadBtn" type="button" value="Upload"
                                                             class="btn btn-success mt-2" style="display: none;"
@@ -133,13 +144,13 @@
                                                 asp-controller="User">Profile</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" asp-action="Security" asp-controller="User">Security</a>
+                                            <a class="nav-link" asp-action="Security" asp-controller="HRM">Security</a>
                                         </li>
 
                                     </ul>
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form class="form" asp-controller="User" asp-action="Profile" method="post">
+                                            <form class="form" asp-controller="HRM" asp-action="Profile" method="post">
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="row">
@@ -261,14 +272,14 @@
                     </div>
                     <div class="col-12 col-md-3 mb-3">
                         <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="px-xl-3">
-                                    <button class="btn btn-block btn-secondary" onclick="Logout()">
-                                        <i class="fa fa-sign-out"></i>
-                                        <span>Logout</span>
-                                    </button>
-                                </div>
+                            @* <div class="card-body">
+                            <div class="px-xl-3">
+                            <button class="btn btn-block btn-secondary">
+                            <i class="fa fa-sign-out"></i>
+                            <span>Logout</span>
+                            </button>
                             </div>
+                            </div> *@
                         </div>
                         <div class="card">
                             <div class="card-body">
@@ -281,6 +292,8 @@
                                         window.location.href = "mailto:thanhpqce171732@fpt.edu.vn";
                                     }
                                 </script>
+
+
                             </div>
                         </div>
                     </div>
@@ -314,27 +327,10 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                  }).then((result) => {
-                                                                if (result.isConfirmed) {
+                                                                                 }).then((result) => {
+                                                                                 if (result.isConfirmed) {
                 }
-                                                                 });
-        </text>
-
-    }
-    @if (TempData["MessseErro"] != null)
-    {
-        <text>
-                Swal.fire({
-                    title: "Failed!!",
-                text: '@TempData["MessseErro"]',
-                icon: "error",
-                showCancelButton: false,
-                confirmButtonColor: "#3085d6",
-                confirmButtonText: "OK"
-                                                                        }).then((result) => {
-                                                                       if (result.isConfirmed) {
-                }
-                                                                  });
+                                                                                });
         </text>
 
     }
@@ -349,7 +345,7 @@
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "/User/Logout";
+                    window.location.href = "/HRM/Logout";
                 }
             });
 

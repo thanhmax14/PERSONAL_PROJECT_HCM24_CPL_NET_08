@@ -9,7 +9,7 @@
     <meta charset="utf-8">
 
 
-    <title>bs4 edit profile page - Bootdey.com</title>
+    <title>Security</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
@@ -28,10 +28,19 @@
                 <div class="card p-3">
                     <div class="e-navlist e-navlist--active-bg">
                         <ul class="nav">
-                            <li class="nav-item"><a class="nav-link px-2 active" href="" target=""><i
-                                        class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+                            <li class="nav-item"><a class="nav-link px-2" asp-controller="HRM" asp-action="Profile"
+                                    class="fa fa-fw fa-cog mr-1"></i><span>Profile</span></a></li>
+                            <li class="nav-item"><a class="nav-link px-2" asp-action="Manager" asp-controller="HRM"><i
+                                        class="fa fa-fw fa-th mr-1"></i><span>Manager</span></a></li>
                         </ul>
                     </div>
+                </div>
+                <br>
+                <div class="card p-3">
+                    <button class="btn btn-block btn-secondary" onclick="Logout()">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Logout</span>
+                    </button>
                 </div>
             </div>
             <div class="col">
@@ -43,21 +52,26 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-auto mb-3">
                                             <div class="mx-auto" style="width: 140px;">
-                                                <img id="preview" src="/uploads/@ViewBag.img"
-                                                    class="d-flex justify-content-center align-items-center rounded"
-                                                    style="height: 140px;width: 140px;; background-color: rgb(233, 236,
+                                                <div class="d-flex justify-content-center align-items-center rounded"
+                                                    style="height: 140px; background-color: rgb(233, 236, 239);">
+                                                    <img id="preview" src="/uploads/@ViewBag.img"
+                                                        class="d-flex justify-content-center align-items-center rounded"
+                                                        style="height: 140px;width: 140px;; background-color: rgb(233, 236,
                                                 239);display: none;" />
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                             <div class="text-center text-sm-left mb-2 mb-sm-0">
                                                 <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap"> @ViewBag.Fullname</h4>
-                                                <p class="mb-0"></p>
+                                                @* <p class="mb-0">thanhmax14/p> *@
                                                 <div class="text-muted"><small>Last seen 2 hours ago</small></div>
                                                 <div class="mt-2">
-
+                                                      
                                                 </div>
                                             </div>
+                                            
+
                                             <div class="text-center text-sm-right">
                                                 <span class="badge badge-info">@ViewBag.Role</span>
                                                 <div class="text-muted"><small>Joined @ViewBag.jonin</small></div>
@@ -67,7 +81,7 @@
                                     <ul class="nav nav-tabs">
 
                                         <li class="nav-item">
-                                            <a class="nav-link" asp-action="Profile" asp-controller="User">Profile</a>
+                                            <a class="nav-link" asp-action="Profile" asp-controller="HRM">Profile</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="active nav-link" asp-action="Security"
@@ -77,8 +91,7 @@
                                     </ul>
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form class="form" asp-action="Security" asp-controller="User"
-                                                method="post">
+                                            <form class="form" asp-action="Security" asp-controller="HRM" method="post">
 
                                                 <div class="row">
                                                     <div class="card col-12 col-sm-6 mb-3">
@@ -165,7 +178,7 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="px-xl-3">
-                                    <button class="btn btn-block btn-secondary" onclick="Logout()">
+                                    <button class="btn btn-block btn-secondary">
                                         <i class="fa fa-sign-out"></i>
                                         <span>Logout</span>
                                     </button>
@@ -239,11 +252,11 @@
                 showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 confirmButtonText: "OK"
-                                                                                                                                                                                                                                                                                }).then((result) => {
-                                                                                                                                                                                                                                                                                  if (result.isConfirmed) {
+                                                                                                                                                                                                                                                                            }).then((result) => {
+                                                                                                                                                                                                                                                                              if (result.isConfirmed) {
 
                 }
-                                                                                                                                                                                                                                                                                });
+                                                                                                                                                                                                                                                                            });
         </text>
 
     }
@@ -301,10 +314,11 @@
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "/User/Logout";
+                window.location.href = "/HRM/Logout";
             }
         });
 
     }
+
 
 </script>

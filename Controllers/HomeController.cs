@@ -69,6 +69,27 @@ public class HomeController : Controller
                         };
                         Response.Cookies.Append("username", Hash.Encrypt(check.UserName), option);
                         Response.Cookies.Append("password", Hash.Encrypt(us.Password), option);
+                        if (!check.verifyAccount)
+                        {
+                            return RedirectToAction("VerifyCode");
+                        }
+                        else if (check.RoleID == 1)
+                        {
+                            return RedirectToAction("Profile", "User");
+                        }
+                        else if (check.RoleID == 2)
+                        {
+                            return RedirectToAction("Manager", "HRM");
+                        }
+                        else if (check.RoleID == 3)
+                        {
+                            return RedirectToAction("ManagerUser", "Admin");
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index");
+
+                        }
                     }
                     else
                     {
@@ -79,8 +100,23 @@ public class HomeController : Controller
                     {
                         return RedirectToAction("VerifyCode");
                     }
+                    else if (check.RoleID == 1)
+                    {
+                        return RedirectToAction("Profile", "User");
+                    }
+                    else if (check.RoleID == 2)
+                    {
+                        return RedirectToAction("Manager", "HRM");
+                    }
+                    else if (check.RoleID == 3)
+                    {
+                        return RedirectToAction("ManagerUser", "Admin");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index");
 
-                    return RedirectToAction("Index");
+                    }
                 }
                 else
                 {
@@ -109,7 +145,6 @@ public class HomeController : Controller
         var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         if (!authenticateResult.Succeeded)
             return BadRequest();
-
         else
         {
             var userInfo = new
@@ -161,11 +196,11 @@ public class HomeController : Controller
                     }
                     else if (checkogin.RoleID == 2)
                     {
-                        return RedirectToAction("Index", "HRM");
+                        return RedirectToAction("Manager", "HRM");
                     }
                     else if (checkogin.RoleID == 3)
                     {
-                        return RedirectToAction("Index", "Admin");
+                        return RedirectToAction("ManagerUser", "Admin");
                     }
                     else
                     {
@@ -247,7 +282,7 @@ public class HomeController : Controller
                     }
                     else if (checkogin.RoleID == 2)
                     {
-                        return RedirectToAction("Index", "HRM");
+                        return RedirectToAction("Manager", "HRM");
                     }
                     else if (checkogin.RoleID == 3)
                     {
@@ -265,12 +300,14 @@ public class HomeController : Controller
     }
 
 
-    public async Task<IActionResult> SignOut()
+    public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         await HttpContext.SignOutAsync(MicrosoftAccountDefaults.AuthenticationScheme);
+        HttpContext.Session.Clear();
         return RedirectToAction("Index", "Home");
     }
+
 
     public IActionResult Register()
     {
@@ -350,11 +387,6 @@ public class HomeController : Controller
         return RedirectToAction("Index");
 
 
-    }
-    public async Task<IActionResult> Logout()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Index", "Home");
     }
     public IActionResult checkCode(string allnumber)
     {
